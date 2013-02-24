@@ -67,7 +67,24 @@
 					<section>
 						<h2 class="main-title">Issues Reported</h2>
 						
-						<p> Spit out the database here. <P>
+// This is what i'm working on, this should connect to the database and
+// print out the database based on IDs in descending order.
+
+<?php
+              	include('dbconnect.php');
+	       $query = "SELECT * FROM reports;
+               $result = mysqli_query($db, $query)
+                         or die("Error Querying Database");
+    while($row = mysqli_fetch_array($result)) {
+  		$id = $row['id'];
+  	echo "$id"\n;
+  }                 
+                         
+                         
+                         
+    mysqli_close($db);
+
+?>
 
 
 
