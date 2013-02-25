@@ -65,13 +65,48 @@
 					
 					<!-- Main Content Area -->
 					<section>
-						<h2 class="main-title">Issues Reported</h2>
+						<h2 class="main-title">Submit Your Maintenance Problem</h2>
 						
-// This is what i'm working on, this should connect to the database and
-// print out the database based on IDs in descending order.
+<!-- CONTENT -->
+					<h3>Please Describe Your Maintenance Problem</h3>
+                                       
+
+
+				
+
+					<table>
+					<tr><td>Building</td><td><input type="text" id="Building" name="Building" /></td></tr>
+					<tr><td>Floor</td><td><input type="text" id="Floor" name="Floor" /></td></tr>
+					<tr><td>Room</td><td><input type="text" id="Room" name="Room" /></td></tr>
+					<tr><td>Report Date</td><td><input type="number" name="month" min="1" max="12" step="1" value="1" size="3"/>
+					<input type="number" name="day" min="1" max="31" step="1" value="1" size="3"/>
+					<input type="number" name="year" min="2013" max="2020" step="1" value="2011" size="4"/></td></tr>
+					
+					
+										
+					
+					<tr><td>Description</td><td><input type="text" id="Description" name="Description" /></td></tr>
+					
+					<tr><td>&nbsp;</td><td><input type="submit" name="Report" value="Report" /></td></tr>
+					</table>
+					
+					</form>
+					<!-- END CONTENT -->
 
 <?php
-              	include('dbconnect.php');
+include('dbconnect.php');				
+ 				if(isset($_POST['Report'])) { 
+				   echo"asdasdsd";
+				$q = mysql_query("INSERT INTO reports (keys) VALUES ('$values')")or die(mysql_error()); 
+				if($q) { 
+					echo "successful"; 
+				}else { 
+					echo "error"; 
+				} 
+				} 
+
+
+              	
 	       $query = "SELECT * FROM reports;
                $result = mysqli_query($db, $query)
                          or die("Error Querying Database");
