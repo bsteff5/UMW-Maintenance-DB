@@ -6,6 +6,7 @@
 		$_SESSION['loggedIn'] = 0;
 		$_SESSION['accessLevel'] = 0;
 		$_SESSION['username'] = 'Anonymous';
+		$failed = 0;
 		
 	} else {
 	
@@ -95,7 +96,7 @@
 		<link rel="stylesheet" href="css/5grid/core-desktop.css" />
 		<link rel="stylesheet" href="css/5grid/core-1200px.css" />
 		<link rel="stylesheet" href="css/5grid/core-noscript.css" />
-		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/style.css" />p
 		<link rel="stylesheet" href="css/style-desktop.css" />
 		</noscript>
 		<script src="css/5grid/jquery.js"></script>
