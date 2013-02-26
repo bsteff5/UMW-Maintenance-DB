@@ -72,7 +72,7 @@
                                        
 
 
-				
+					<form method="post" action="submitReport.php"> 
 
 					<table>
 					<tr><td>Building</td><td><input type="text" id="Building" name="Building" /></td></tr>
@@ -92,34 +92,6 @@
 					
 					</form>
 					<!-- END CONTENT -->
-
-<?php
-include('dbconnect.php');				
- 				if(isset($_POST['Report'])) { 
-				   echo"asdasdsd";
-				$q = mysql_query("INSERT INTO reports (keys) VALUES ('$values')")or die(mysql_error()); 
-				if($q) { 
-					echo "successful"; 
-				}else { 
-					echo "error"; 
-				} 
-				} 
-
-
-              	
-	       $query = "SELECT * FROM reports;
-               $result = mysqli_query($db, $query)
-                         or die("Error Querying Database");
-    while($row = mysqli_fetch_array($result)) {
-  		$id = $row['id'];
-  	echo "$id"\n;
-  }                 
-                         
-                         
-                         
-    mysqli_close($db);
-
-?>
 
 
 
