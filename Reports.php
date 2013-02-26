@@ -9,7 +9,7 @@
 
 <html>
 	<head>
-		<title>MegaCorp by HTML5Templates.com</title>
+		<title> UMW Maintenance DB </title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -85,27 +85,27 @@
 									<section>
 										<h2>Date Reported</h2>
 										<ul class="style4">
-											<li class="first"><a href="#">Maecenas luctus</a></li>
-											<li><a href="#">2/19/13</a></li>
-											<li><a href="#">Donec metus sapien</a></li>
-											<li><a href="#">Integer quis urna</a></li>
-											<li><a href="#">Etiam rhoncus erat</a></li>
-											<li><a href="#">Donec metus sapien</a></li>
-											<li><a href="#">Etiam volutpat erat</a></li>
+											<li class="first"><a href="#">Date 1</a></li>
+											<li><a href="#">Date 2</a></li>
+											<li><a href="#">Date 3</a></li>
+											<li><a href="#">Date 4</a></li>
+											<li><a href="#">Date 5</a></li>
+											<li><a href="#">Date 6</a></li>
+											<li><a href="#">Date 7</a></li>
 										</ul>
 									</section>
 								</div>
 								<div class="6u">
 									<section>
-										<h2>Descripiton</h2>
+										<h2>Building</h2>
 										<ul class="style4">
-											<li class="first"><a href="#">Luctus sapien</a></li>
-											<li><a href="#">Broken Window</a></li>
-											<li><a href="#">Donec dictum metus </a></li>
-											<li><a href="#">Integer gravida </a></li>
-											<li><a href="#">Donec dictum </a></li>
-											<li><a href="#">Integer quis urna</a></li>
-											<li><a href="#">Etiam rhoncus erat</a></li>
+											<li class="first"><a href="#">Building 1</a></li>
+											<li><a href="#">Building 2</a></li>
+											<li><a href="#">Building 3</a></li>
+											<li><a href="#">Building 4</a></li>
+											<li><a href="#">Building 5</a></li>
+											<li><a href="#">Building 6</a></li>
+											<li><a href="#">Building 7</a></li>
 										</ul>
 									</section>
 								</div>
@@ -113,13 +113,13 @@
 									<section>
 										<h2>Status</h2>
 										<ul class="style4">
-											<li class="first"><a href="#">Luctus sapien</a></li>
-											<li><a href="#">Broken Window</a></li>
-											<li><a href="#">Donec dictum metus </a></li>
-											<li><a href="#">Integer gravida </a></li>
-											<li><a href="#">Donec dictum </a></li>
-											<li><a href="#">Integer quis urna</a></li>
-											<li><a href="#">Etiam rhoncus erat</a></li>
+											<li class="first"><a href="#">Status 1</a></li>
+											<li><a href="#">Status 2</a></li>
+											<li><a href="#">Status 3</a></li>
+											<li><a href="#">Status 4</a></li>
+											<li><a href="#">Status 5</a></li>
+											<li><a href="#">Status 6</a></li>
+											<li><a href="#">Status 7</a></li>
 										</ul>
 									</section>
 								</div>
@@ -131,22 +131,7 @@
 	
 					<!-- Sidebar Section 2 -->
 					<section id="box2">
-						<h2>Ipsum Consequat</h2>
-						<ul class="style2">
-							<li class="first">
-								<p><a href="#"><img src="images/pics07.jpg" alt="">Pellentesque viverra vulputate enim. Aliquam erat volutpat. Donec leo, vivamus fermentum nibh in augue praesent congue rutrum. </a></p>
-							</li>
-							<li>
-								<p><a href="#"><img src="images/pics08.jpg" alt="">Aliquam lacinia metus ut elit. Suspendisse iaculis mauris nec lorem. Donec leo, vivamus fermentum augue praesent congue rutrum.</a></p>
-							</li>
-							<li>
-								<p><a href="#"><img src="images/pics09.jpg" alt="">Suspendisse sit amet tellus in eros bibendum condimentum. Donec leo, vivamus fermentum nibh in augue praesent a lacus congue rutrum. </a></p>
-							</li>
-							<li>
-								<p><a href="#"><img src="images/pics10.jpg" alt="">Aliquam lacinia metus ut elit. Suspendisse iaculis mauris nec lorem. Donec leo, vivamus fermentum augue praesent congue rutrum.</a></p>
-							</li>
-						</ul>
-						<a href="#" class="button button-style1">Read More</a>
+						<a href="FullList.php" class="button button-style1">View All</a>
 					</section>
 
 
