@@ -5,7 +5,7 @@ include('dbconnect.php');
 $Building = $_POST['Building'];
 $Floor= $_POST['Floor'];
 $Room= $_POST['Room'];
-$Reportdate=$_POST['year']."-".$_POST['month']."-".$_POST['day'];
+$ReportDate=$_POST['year']."-".$_POST['month']."-".$_POST['day'];
 $Description=$_POST['Description'];
 				
  				

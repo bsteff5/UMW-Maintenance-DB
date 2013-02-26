@@ -96,7 +96,7 @@ reportList.td {
 					echo "<tr><th>Date Reported:</th><th>Building:</th><th>Floor:</th><th>Room:</th><th>Description:</th></tr>";
 					 while($row = mysqli_fetch_array($result)) {
 					 	
-						echo "<tr><td align='center'>" . $row['DateReported'] . "</td><td align='center'>" . $row['Building'] . "</td><td align='center'>" . $row['Floor'] . "</td><td align='center'>" . $row['Room'] . "</td><td align='center'>" . $row['Description'] . "</td></tr>";
+						echo "<tr><td align='center'>" . $row['ReportDate'] . "</td><td align='center'>" . $row['Building'] . "</td><td align='center'>" . $row['Floor'] . "</td><td align='center'>" . $row['Room'] . "</td><td align='center'>" . $row['Description'] . "</td></tr>";
 						
 						
 					}	
