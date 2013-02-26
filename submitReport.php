@@ -3,11 +3,15 @@ include('dbconnect.php');
 
 echo $_POST['Building'];	
 
-$building = $_POST['Building'];			
+$Building = $_POST['Building'];
+$Floor= $_POST['Floor'];
+$Room= $_POST['Room'];
+$Reportdate=$_POST['year']."-".$_POST['month']."-".$_POST['day'];
+$Description=$_POST['Description'];
 				
  				if(isset($_POST['Report'])) { 
 				   echo"asdasdsd";
-				$q = mysqli_query($db, "INSERT INTO reports (building, floor,) VALUES ('$values')")or die(mysql_error()); 
+				$q = mysqli_query($db, "INSERT INTO reports (Description,ReportDate,Building,Floor,Room) VALUES ($Description,$ReportDate,$Building,$Floor,$Room)") or die(mysql_error()); 
 				if($q) { 
 					echo "successful"; 
 				}else { 
