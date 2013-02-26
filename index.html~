@@ -23,7 +23,7 @@
 		</noscript>
 		<script src="css/5grid/jquery.js"></script>
 		
-		<script src="css/5grid/init.js?use=mobile,desktop,1000px&amp;mobileUI=1&amp;mobileUI.theme=modern"></script>
+		<script src="css/5grid/init.js?use=mobile,desktop,1000px&amp;mobileUI=1&amp;mobileUI.theme=flat"></script>
 		<!--[if IE 9]><link rel="stylesheet" href="css/style-ie9.css" /><![endif]-->
 	</head>
 	<body>
@@ -35,13 +35,13 @@
 				<div class="5grid-layout">
 					<div class="row">
 						<div class="4u" id="logo">
-							<h1><a href="#" class="mobileUI-site-name">MegaCorp</a></h1>
+							<h1><a href="#" class="mobileUI-site-name">UMW Maintenance</a></h1>
 						</div>
 						<div class="8u" id="menu">
 							<nav class="mobileUI-site-nav">
 								<ul>
 									<li class="current_page_item"><a href="index.html">Homepage</a></li>
-									<li><a href="twocolumn1.html">Two Column #1</a></li>
+									<li><a href="Reports.php">Problem Reports</a></li>
 									<li><a href="twocolumn2.html">Two Column #2</a></li>
 									<li><a href="onecolumn.html">One Column</a></li>
 								</ul>
@@ -255,7 +255,7 @@
 			<div class="row">
 				<div class="12u">
 					<section>
-						<p>&copy; Your Site Name | Images: <a href="http://fotogrph.com/">Fotogrph</a> + <a href="http://iconify.it/">Iconify.it</a> | Design: <a href="http://html5templates.com/">HTML5Templates.com</a></p>
+						<p>&copy; UMW Maintenance | Images: <a href="http://fotogrph.com/">Fotogrph</a> + <a href="http://iconify.it/">Iconify.it</a> | Design: <a href="http://html5templates.com/">HTML5Templates.com</a></p>
 					</section>
 				</div>
 			</div>
