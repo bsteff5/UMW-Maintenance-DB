@@ -34,15 +34,15 @@
 				<div class="5grid-layout">
 					<div class="row">
 						<div class="4u" id="logo">
-							<h1><a href="#" class="mobileUI-site-name">UMW Maintenance Problems</a></h1>
+							<h1><a href="#" class="mobileUI-site-name">UMW Maintenance</a></h1>
 						</div>
 						<div class="8u" id="menu">
 							<nav class="mobileUI-site-nav">
 								<ul>
 									<li><a href="index.html">Homepage</a></li>
-									<li><a href="twocolumn1.html">Two Column #1</a></li>
-									<li><a href="twocolumn2.html">Two Column #2</a></li>
-									<li class="current_page_item"><a href="onecolumn.html">One Column</a></li>
+									<li><a href="Reports.php">Problem Reports</a></li>
+									<li class="current_page_item"><a href="report.php">Submit a Report</a></li>
+									<li ><a href="login.php">Login</a></li>
 								</ul>
 							</nav>
 						</div>
@@ -80,7 +80,7 @@
 					<tr><td>Room</td><td><input type="text" id="Room" name="Room" /></td></tr>
 					<tr><td>Report Date</td><td><input type="number" name="month" min="1" max="12" step="1" value="1" size="3"/>
 					<input type="number" name="day" min="1" max="31" step="1" value="1" size="3"/>
-					<input type="number" name="year" min="2013" max="2020" step="1" value="2011" size="4"/></td></tr>
+					<input type="number" name="year" min="2013" max="2020" step="1" value="2013" size="4"/></td></tr>
 					
 					
 										

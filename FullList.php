@@ -20,10 +20,27 @@
 		<link rel="stylesheet" href="css/5grid/core-noscript.css" />
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/style-desktop.css" />
+		<link  type="text/css" rel="stylesheet" href="css/350css.css" />
 		</noscript>
 		<script src="css/5grid/jquery.js"></script>
 		<script src="css/5grid/init.js?use=mobile,desktop,1000px&amp;mobileUI=1&amp;mobileUI.theme=none"></script>
 		<!--[if IE 9]><link rel="stylesheet" href="css/style-ie9.css" /><![endif]-->
+		
+<style type="text/css"><!--
+reportList.table { 
+  border-spacing:4;
+  border: 2;
+  border-collapse:collapse;
+  padding: 8
+}
+
+reportList.td {
+
+  cellpadding: 10;
+  
+	
+}
+--></style>
 	</head>
 	<body>
 
@@ -41,8 +58,8 @@
 								<ul>
 									<li><a href="index.html">Homepage</a></li>
 									<li class="current_page_item"><a href="Reports.php">Problem Reports</a></li>
-									<li><a href="twocolumn2.html">Two Column #2</a></li>
-									<li><a href="onecolumn.html">One Column</a></li>
+									<li><a href="report.php">Submit a Report</a></li>
+									<li><a href="login.php">Login</a></li>
 								</ul>
 							</nav>
 						</div>
@@ -52,22 +69,56 @@
 			
 		</div>
 		<!-- Header Ends Here -->
-		<p>
+		<!-- Wrapper -->
+		<div id="wrapper" class="5grid-layout">
+		
+			<!-- Page Content -->
+			<div id="page" class="row">
+				
+				<!-- Content Area -->
+				<div id="content" class="12u">
+					
+					<!-- Main Content Area -->
+		<section>
+			<h2 class="main-title">Full List or Reports</h2>
+						<!-- <a href="#" class="image-style1"><img src="images/pic02.jpg" alt=""></a> -->
+						
+
+
+		
 		<div align="center">
 			<?php
 					include('dbconnect.php');
 					$query = "SELECT * FROM reports";					
 					$result = mysqli_query($db, $query) or die("Error Querying Database");
+					
+					echo "<table class='reportList' width='100%' align='center' padding='10'>";
+					echo "<tr><th>Date Reported:</th><th>Building:</th><th>Floor:</th><th>Room:</th><th>Description:</th></tr>";
 					 while($row = mysqli_fetch_array($result)) {
-						echo "<p>" . $row['Description'] . "</p>";
+					 	
+						echo "<tr><td align='center'>" . $row['DateReported'] . "</td><td align='center'>" . $row['Building'] . "</td><td align='center'>" . $row['Floor'] . "</td><td align='center'>" . $row['Room'] . "</td><td align='center'>" . $row['Description'] . "</td></tr>";
 						
 						
 					}	
+					
+					echo "</table>"
 
 					
-					?>
+			?>
 			</div>
-		</p>
+
+
+
+			</section>
+			
+				
+				</div>
+			</div>
+			<!-- Page Content -->
+		
+		</div>
+		<!-- Wrapper Ends Here -->
+
 		<!-- Copyright -->
 		<div class="5grid-layout" id="copyright">
 			<div class="row">

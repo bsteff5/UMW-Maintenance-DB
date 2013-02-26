@@ -40,9 +40,9 @@
 							<nav class="mobileUI-site-nav">
 								<ul>
 									<li><a href="index.html">Homepage</a></li>
-									<li class="current_page_item"><a href="Reports.php">Probelm Reports</a></li>
-									<li><a href="twocolumn2.html">Two Column #2</a></li>
-									<li><a href="onecolumn.html">One Column</a></li>
+									<li class="current_page_item"><a href="Reports.php">Problem Reports</a></li>
+									<li><a href="report.php">Submit a Report</a></li>
+									<li><a href="login.php">Login</a></li>
 								</ul>
 							</nav>
 						</div>
