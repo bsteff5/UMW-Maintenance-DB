@@ -53,15 +53,20 @@
 		</div>
 		<!-- Header Ends Here -->
 		<p>
+		<div align="center">
 			<?php
 					include('dbconnect.php');
 					$query = "SELECT * FROM reports";					
-					echo "<p>QUERY   $query</p>";
-					$result = mysqli_query($db, $query)
-                         or die("Error Querying Database");
+					$result = mysqli_query($db, $query) or die("Error Querying Database");
+					 while($row = mysqli_fetch_array($result)) {
+						echo "<p>" . $row['Description'] . "</p>";
+						
+						
+					}	
 
 					
 					?>
+			</div>
 		</p>
 		<!-- Copyright -->
 		<div class="5grid-layout" id="copyright">
