@@ -18,8 +18,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Database: `umw_maintenance`
 --
-CREATE DATABASE `umw_maintenance` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `umw_maintenance`;
+
 
 -- --------------------------------------------------------
 

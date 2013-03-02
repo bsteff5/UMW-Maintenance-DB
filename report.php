@@ -34,17 +34,10 @@
 				<div class="5grid-layout">
 					<div class="row">
 						<div class="4u" id="logo">
-							<h1><a href="#" class="mobileUI-site-name">UMW Maintenance</a></h1>
+							<h1><a href="index.php" class="mobileUI-site-name">UMW Maintenance</a></h1>
 						</div>
 						<div class="8u" id="menu">
-							<nav class="mobileUI-site-nav">
-								<ul>
-									<li><a href="index.html">Homepage</a></li>
-									<li><a href="Reports.php">Problem Reports</a></li>
-									<li class="current_page_item"><a href="report.php">Submit a Report</a></li>
-									<li ><a href="login.php">Login</a></li>
-								</ul>
-							</nav>
+							<?php include 'includes/nav-bar.php'; ?>
 						</div>
 					</div>
 				</div>

@@ -1,0 +1,12 @@
+<?php 
+
+							<nav class="mobileUI-site-nav">
+								<ul>
+									<li class="current_page_item"><a href="index.html">Homepage</a></li>
+									<li><a href="Reports.php">Problem Reports</a></li>
+									<li><a href="report.php">Submit a Report</a></li>
+									<li><a href="login.php">Login</a></li>
+								</ul>
+							</nav>
+
+?>
