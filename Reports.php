@@ -34,10 +34,17 @@
 				<div class="5grid-layout">
 					<div class="row">
 						<div class="4u" id="logo">
-							<h1><a href="index.php" class="mobileUI-site-name">UMW Maintenance</a></h1>
+							<h1><a href="#" class="mobileUI-site-name">UMW Maintenance</a></h1>
 						</div>
 						<div class="8u" id="menu">
-							<?php include 'includes/nav-bar.php'; ?>
+							<nav class="mobileUI-site-nav">
+								<ul>
+									<li><a href="index.html">Homepage</a></li>
+									<li class="current_page_item"><a href="Reports.php">Problem Reports</a></li>
+									<li><a href="report.php">Submit a Report</a></li>
+									<li><a href="login.php">Login</a></li>
+								</ul>
+							</nav>
 						</div>
 					</div>
 				</div>
@@ -85,6 +92,8 @@
 											<li><a href="#">Date 5</a></li>
 											<li><a href="#">Date 6</a></li>
 											<li><a href="#">Date 7</a></li>
+											<li><a href="currentReports.php">View All Current Reports</a></li>
+
 										</ul>
 									</section>
 								</div>
@@ -99,6 +108,8 @@
 											<li><a href="#">Building 5</a></li>
 											<li><a href="#">Building 6</a></li>
 											<li><a href="#">Building 7</a></li>
+											<li><a href=""></a></li>
+
 										</ul>
 									</section>
 								</div>
@@ -113,6 +124,16 @@
 											<li><a href="#">Status 5</a></li>
 											<li><a href="#">Status 6</a></li>
 											<li><a href="#">Status 7</a></li>
+											<li><a href=""></a></li>
+										</ul>
+									</section>
+								</div>
+								<div class="6u">
+									<section>
+										<h2>Other</h2>
+										<ul class="style4">
+											<li class="first"><a href="resolved.php">Resovled List</a></li>
+											<li><a href="unresolved.php">Unresolved List</a></li>
 										</ul>
 									</section>
 								</div>

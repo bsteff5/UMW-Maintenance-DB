@@ -78,11 +78,6 @@ reportList.td {
 				<!-- Content Area -->
 				<div id="content" class="12u">
 					
-					<!-- Main Content Area -->
-		<section>
-			<h2 class="main-title">Full List of Reports</h2>
-			<h3><a href="Reports.php">Back</a></h3>
-			
 						<!-- <a href="#" class="image-style1"><img src="images/pic02.jpg" alt=""></a> -->
 						
 
@@ -91,7 +86,7 @@ reportList.td {
 		<div align="center">
 			<?php
 					include('dbconnect.php');
-					$query = "SELECT * FROM reports";					
+					$query = "SELECT * FROM reports ORDER BY ReportDate DESC";					
 					$result = mysqli_query($db, $query) or die("Error Querying Database");
 					
 					echo "<table class='reportList' width='100%' align='center' padding='10'>";

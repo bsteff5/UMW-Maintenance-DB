@@ -80,7 +80,7 @@ reportList.td {
 					
 					<!-- Main Content Area -->
 		<section>
-			<h2 class="main-title">Full List of Reports</h2>
+			<h2 class="main-title">Unresolved Reports</h2>
 			<h3><a href="Reports.php">Back</a></h3>
 			
 						<!-- <a href="#" class="image-style1"><img src="images/pic02.jpg" alt=""></a> -->
@@ -91,14 +91,14 @@ reportList.td {
 		<div align="center">
 			<?php
 					include('dbconnect.php');
-					$query = "SELECT * FROM reports";					
+					$query = "SELECT ReportDate, Building, Floor, Room, Description FROM reports WHERE ResolveDate IS NULL";					
 					$result = mysqli_query($db, $query) or die("Error Querying Database");
 					
 					echo "<table class='reportList' width='100%' align='center' padding='10'>";
-					echo "<tr><th><h2>Date Reported:</h2></th><th><h2>Date Resolved:</h2></th><th><h2>Building:</h2></th><th><h2>Floor:</h2></th><th><h2>Room:</h2></th><th><h2>Description:</h2></th></tr>";
+					echo "<tr><th><h2>Date Reported:</h2></th><th><h2>Building:</h2></th><th><h2>Floor:</h2></th><th><h2>Room:</h2></th><th><h2>Description:</h2></th></tr>";
 					 while($row = mysqli_fetch_array($result)) {
 					 	
-						echo "<tr><td align='center'>" . $row['ReportDate'] . "</td><td align='center'>" . $row['ResolveDate'] . "</td><td align='center'>" .$row['Building'] . "</td><td align='center'>" . $row['Floor'] . "</td><td align='center'>" . $row['Room'] . "</td><td align='center'>" . $row['Description'] . "</td></tr>";
+						echo "<tr><td align='center'>" . $row['ReportDate'] . "</td><td align='center'>" .$row['Building'] . "</td><td align='center'>" . $row['Floor'] . "</td><td align='center'>" . $row['Room'] . "</td><td align='center'>" . $row['Description'] . "</td></tr>";
 						
 						
 					}	

@@ -80,7 +80,7 @@ reportList.td {
 					
 					<!-- Main Content Area -->
 		<section>
-			<h2 class="main-title">Full List of Reports</h2>
+			<h2 class="main-title">Resolved Reports</h2>
 			<h3><a href="Reports.php">Back</a></h3>
 			
 						<!-- <a href="#" class="image-style1"><img src="images/pic02.jpg" alt=""></a> -->
@@ -91,7 +91,7 @@ reportList.td {
 		<div align="center">
 			<?php
 					include('dbconnect.php');
-					$query = "SELECT * FROM reports";					
+					$query = "SELECT ReportDate, ResolveDate, Building, Floor, Room, Description FROM reports WHERE ResolveDate IS NOT NULL";					
 					$result = mysqli_query($db, $query) or die("Error Querying Database");
 					
 					echo "<table class='reportList' width='100%' align='center' padding='10'>";
