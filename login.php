@@ -15,7 +15,7 @@
 
 	
 	// Check to see if the user has attempted a login or if  it's there first time visiting this page
-	if( $_SESSION['loggedIn'] == 0 && ($_POST['username'] != "" || $_POST['password'] != "")){
+	if( $_SESSION['loggedIn'] == 0 || ($_POST['username'] != "" || $_POST['password'] != "")){
 	
 		// If so, include the db_connect for querying the database
 		include('dbconnect.php');
@@ -41,14 +41,16 @@
 		
 		// If we have a match, which should only be one!!!
 		if($row_cnt == 1) {
+			
+			$row = mysqli_fetch_array($result);
 
 			// Set up the session variables we'll use throughout the site
 			$_SESSION['username'] = $row['username'];
-			$_SESSION['accessLevel'] = $row['permission'];
+			$_SESSION['accessLevel'] = $row['permissions'];
 			$_SESSION['loggedIn'] = 1;
 			
 			// Finally, redirect the user back to the index.html page ;)
-			header('Location: index.html');
+			header('Location: admin.php');
 			
 		} else {
 
@@ -110,6 +112,7 @@
 		
 			<header id="header">
 				<div class="5grid-layout">
+
 					<div class="row">
 						<div class="4u" id="logo">
 							<h1><a href="index.php" class="mobileUI-site-name">UMW Maintenance</a></h1>
@@ -146,7 +149,7 @@
 								<div class="form">
 									<form method="post" action="login.php">
 									
-									<?php if($failed == 1) { echo "<div class=\"warning\"><p>Wrong password, please try again.</p><p class=\"c\">&nbsp;</p></div>"; } ?>
+									<?php if($failed == 1) { echo '<div class=\"warning\"><p>Wrong password, please try again.</p><p class=\"c\"></p></div>'; } ?>
 									<input type="text" value="Username" name="username"/>
 									<input type="password" value="*******" name="password"/>
 									<p class="btn">
