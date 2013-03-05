@@ -50,7 +50,7 @@
 						<section>
 							<h2>UMW Maintenance DB</h2>
 							<p>Is that sink leaking again? Report your problems here man!!</p>
-							<a href="#" class="button button-style1">Read More</a>
+							<a href="report.php" class="button button-style1">Read More</a>
 						</section>
 					</div>
 				</div>
