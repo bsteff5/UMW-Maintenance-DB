@@ -1,0 +1,13 @@
+SELECT u.first, u.last, t.first, t.last 
+FROM users u JOIN friends f JOIN users t 
+WHERE u.username = f.username AND t.username = f.friend;
+
+SELECT a.first, a.last 
+FROM movies m JOIN actors a JOIN actorMovie am 
+WHERE m.id = am.movie_id AND a.id = am.actor_id AND m.name = 'Argo';
+
+SELECT co.name
+FROM actors a JOIN actors co JOIN actorMovie am JOIN actorMovie am2
+WHERE am1.movie_id = am2.movie_id AND am1.actor_id <> am2.actor_id
+		AND a.name = 'Ben Affleck' AND co.id = am2.actor_id;
+
