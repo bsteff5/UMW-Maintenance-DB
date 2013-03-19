@@ -6,7 +6,7 @@ $id = $_POST['id'];
 $Priority= $_POST['Priority'];
 
 				
- 				
+ 				if(!isset($_SESSION['loggedIn'])){
 				$q = mysqli_query($db, "Update reports SET Priority = $Priority WHERE id=$id"); 
 				
 				if($q == TRUE) { 
@@ -14,6 +14,7 @@ $Priority= $_POST['Priority'];
 				}else { 
 					echo "error"; 
 				} 
+				}
 				header("Location: currentReports.php");
 	
 	                  

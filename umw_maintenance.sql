@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.10deb1
+-- version 3.3.9
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 25, 2013 at 10:59 PM
--- Server version: 5.1.63
--- PHP Version: 5.3.5-1ubuntu7.11
+-- Generation Time: Mar 19, 2013 at 05:42 PM
+-- Server version: 5.5.8
+-- PHP Version: 5.3.5
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
@@ -18,7 +18,8 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Database: `umw_maintenance`
 --
-
+CREATE DATABASE `umw_maintenance` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `umw_maintenance`;
 
 -- --------------------------------------------------------
 
@@ -31,15 +32,67 @@ CREATE TABLE IF NOT EXISTS `reports` (
   `Description` longtext NOT NULL,
   `ReportDate` date NOT NULL,
   `Priority` int(11) DEFAULT '0',
-  `ResolveDate` date DEFAULT NULL,
-  `Building` varchar(50) NOT NULL,
-  `Floor` varchar(40) DEFAULT NULL,
-  `Room` varchar(40) DEFAULT NULL,
+  `BuildingID` int(3) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `reports`
+--
+
+INSERT INTO `reports` (`id`, `Description`, `ReportDate`, `Priority`, `BuildingID`) VALUES
+(1, 'Light out', '2015-06-12', 2, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `resolved`
+--
+
+CREATE TABLE IF NOT EXISTS `resolved` (
+  `id` bigint(20) NOT NULL,
+  `Description` longtext NOT NULL,
+  `Priority` int(11) NOT NULL,
+  `BuildingID` int(3) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `resolved`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `room_problems`
+--
+
+CREATE TABLE IF NOT EXISTS `room_problems` (
+  `report_id` int(3) NOT NULL,
+  `room` int(3) NOT NULL,
+  PRIMARY KEY (`report_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `room_problems`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rooms`
+--
+
+CREATE TABLE IF NOT EXISTS `rooms` (
+  `room` int(3) NOT NULL,
+  `BuildingID` int(3) NOT NULL,
+  PRIMARY KEY (`room`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `rooms`
 --
 
 

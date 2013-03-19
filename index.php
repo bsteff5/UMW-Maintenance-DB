@@ -113,7 +113,7 @@
 					<section>
 						<h2 class="main-title">What is the point of this site?</h2>
 						<a href="#" class="image-style1"><img src="images/pic02.jpg" alt=""></a>
-						<p>Well, if you think about it, it a very greate idea. You can help UMW by submitting problems around campus, which will not only get them fixed faster but you'll get that warm feeling of helpfulness knowing you're helping out man!!</p>
+						<p>Well, if you think about it, it's a great idea. You can help UMW by submitting problems around campus, which will not only get them fixed faster but you'll get that warm feeling of helpfulness knowing you're helping out man!!</p>
 						<a href="#" class="button button-style1">Read More</a>
 					</section>
 					
