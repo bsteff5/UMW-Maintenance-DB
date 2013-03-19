@@ -40,8 +40,7 @@ CREATE TABLE IF NOT EXISTS `reports` (
 -- Dumping data for table `reports`
 --
 
-INSERT INTO `reports` (`id`, `Description`, `ReportDate`, `Priority`, `BuildingID`) VALUES
-(1, 'Light out', '2015-06-12', 2, 0);
+
 
 -- --------------------------------------------------------
 
