@@ -53,6 +53,7 @@ CREATE TABLE IF NOT EXISTS `resolved` (
   `Description` longtext NOT NULL,
   `Priority` int(11) NOT NULL,
   `BuildingID` int(3) NOT NULL,
+  ResolveDate DATE NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
