@@ -90,11 +90,19 @@ reportList.td {
 					$result = mysqli_query($db, $query) or die("Error Querying Database");
 					
 					echo "<table class='reportList' width='100%' align='center' padding='10'>";
-					echo "<tr><th><h2>Date Reported:</h2></th><th><h2>Date Resolved:</h2></th><th><h2>Building:</h2></th><th><h2>Floor:</h2></th><th><h2>Room:</h2></th><th><h2>Description:</h2></th></tr>";
-					 while($row = mysqli_fetch_array($result)) {
-					 	
+                                        if(!isset($_SESSION['loggedIn'])){
+                                         echo "<tr><th><h2>ID:</h2></th><th><h2>Date Reported:</h2></th><th><h2>Priority:</h2></th><th><h2>Date Resolved:</h2></th><th><h2>Building:</h2></th><th><h2>Room:</h2></th><th><h2>Description:</h2></th></tr>";}
+                                            else{
+					           echo "<tr><th><h2>Date Reported:</h2></th><th><h2>Date Resolved:</h2></th><th><h2>Building:</h2></th><th><h2>Floor:</h2></th><th><h2>Room:</h2></th><th><h2>Description:</h2></th></tr>";
+					         }
+					while($row = mysqli_fetch_array($result)) {
+					 	if(!isset($_SESSION['loggedIn'])){
+                                                 echo "<tr><td align='center'>" .$row['id']. "</td><td align='center'>" . $row['ReportDate'] . "</td><td align='center'>" .$row['Priority']."</td><td align='center'>" . $row['ResolveDate'] . "</td><td align='center'>" .$row['Building'] . "</td><td align='center'>" . $row['Room'] . "</td><td align='center'>" . $row['Description'] . "</td></tr>";
+                                               
+ 					}
+                                                 else{
 						echo "<tr><td align='center'>" . $row['ReportDate'] . "</td><td align='center'>" . $row['ResolveDate'] . "</td><td align='center'>" .$row['Building'] . "</td><td align='center'>" . $row['Floor'] . "</td><td align='center'>" . $row['Room'] . "</td><td align='center'>" . $row['Description'] . "</td></tr>";
-						
+						}
 						
 					}	
 					
@@ -107,6 +115,22 @@ reportList.td {
 
 
 			</section>
+                                         &nbsp
+					 &nbsp
+					 
+					<form method="post" action="changePriority.php"> 
+
+					<table>
+					
+					<tr><td>Problem ID</td><td><input type="number" id="id" name="id" /></td></tr>
+					
+					<tr><td>Set Priority To:</td><td><input type="number" id="Priority" name="Priority" /></td></tr>
+					
+					
+					<tr><td>&nbsp;</td><td><input type="submit" name="changePriority" value="Change Priority" /></td></tr>
+					</table>
+					
+					</form>
 			
 				
 				</div>
