@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `reports` (
   `Priority` int(11) DEFAULT '0',
   `BuildingID` int(3) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT ;
 
 --
 -- Dumping data for table `reports`
@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(80) NOT NULL,
   `permissions` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT ;
 
 --
 -- Dumping data for table `users`
