@@ -1,6 +1,7 @@
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 CREATE DATABASE IF NOT EXISTS umw_maintenance;
+USE umw_maintenance;
 
 CREATE TABLE IF NOT EXISTS `reports` (
 	`id` bigint(20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -50,5 +51,3 @@ CREATE TABLE IF NOT EXISTS `room_problems` (
 	PRIMARY KEY(`report_id`)
 );
 
---INSERT INTO buildings (name) VALUES ('Trinkle');
---INSERT INTO buildings (name) VALUES ('Coombs');
