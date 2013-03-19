@@ -56,7 +56,7 @@ reportList.td {
 						<div class="8u" id="menu">
 							<nav class="mobileUI-site-nav">
 								<ul>
-									<li><a href="index.html">Homepage</a></li>
+									<li><a href="index.php">Homepage</a></li>
 									<li class="current_page_item"><a href="Reports.php">Problem Reports</a></li>
 									<li><a href="report.php">Submit a Report</a></li>
 									<li><a href="login.php">Login</a></li>
