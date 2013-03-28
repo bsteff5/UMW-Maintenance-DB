@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.9
+-- version 3.3.10deb1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 19, 2013 at 05:42 PM
--- Server version: 5.5.8
--- PHP Version: 5.3.5
+-- Generation Time: Mar 28, 2013 at 05:21 PM
+-- Server version: 5.1.63
+-- PHP Version: 5.3.5-1ubuntu7.11
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
@@ -28,19 +28,24 @@ USE `umw_maintenance`;
 --
 
 CREATE TABLE IF NOT EXISTS `reports` (
-  `id` bigint(20) NOT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `Description` longtext NOT NULL,
   `ReportDate` date NOT NULL,
   `Priority` int(11) DEFAULT '0',
   `BuildingID` int(3) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `reports`
 --
 
-
+INSERT INTO `reports` (`id`, `Description`, `ReportDate`, `Priority`, `BuildingID`) VALUES
+(1, 'SHIT IN HALLWAY', '2013-03-22', 0, 0),
+(2, 'ASSHOLE HERE', '2013-03-02', 0, 0),
+(3, 'ASSHOLE HERE', '2013-03-02', 0, 0),
+(4, 'HELP ME!!!', '2013-03-22', 0, 0),
+(5, 'SERIAL KILLER', '2013-04-05', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -53,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `resolved` (
   `Description` longtext NOT NULL,
   `Priority` int(11) NOT NULL,
   `BuildingID` int(3) NOT NULL,
-  ResolveDate DATE NOT NULL,
+  `ResolveDate` date NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -69,15 +74,20 @@ CREATE TABLE IF NOT EXISTS `resolved` (
 --
 
 CREATE TABLE IF NOT EXISTS `room_problems` (
-  `report_id` int(3) NOT NULL,
+  `report_id` int(3) NOT NULL AUTO_INCREMENT,
   `room` int(3) NOT NULL,
   PRIMARY KEY (`report_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `room_problems`
 --
 
+INSERT INTO `room_problems` (`report_id`, `room`) VALUES
+(1, 112),
+(2, 33),
+(3, 777),
+(4, 777);
 
 -- --------------------------------------------------------
 
@@ -95,6 +105,10 @@ CREATE TABLE IF NOT EXISTS `rooms` (
 -- Dumping data for table `rooms`
 --
 
+INSERT INTO `rooms` (`room`, `BuildingID`) VALUES
+(33, 0),
+(112, 0),
+(777, 0);
 
 -- --------------------------------------------------------
 
@@ -108,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(80) NOT NULL,
   `permissions` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `users`

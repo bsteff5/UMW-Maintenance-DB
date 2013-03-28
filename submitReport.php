@@ -9,15 +9,15 @@ $ReportDate=$_POST['year']."-".$_POST['month']."-".$_POST['day'];
 $Description=$_POST['Description'];
 				
 				$qi = "INSERT INTO reports (Description, ReportDate, Priority, BuildingID) VALUES ('$Description', '$ReportDate', 0, 0);";
-
-				$q = mysqli_query($db, $qi) or die("Couldn't query the Database or query failed"); 
+				echo "$qi\n";
+				$q = mysqli_query($db, $qi) or die(mysqli_error($db)); 
 	
 
 				$result = mysqli_query($db, "SELECT * FROM rooms WHERE room = ".$Room.";");
 				
 				$exists = mysqli_num_rows($result);
 				
-				echo "ROOM: " . $Room .  " RESULT " . $exists . "--\n";
+				//echo "ROOM: " . $Room .  " RESULT " . $exists . "--\n";
 				if( $exists > 0) {
 				
 				} else {
