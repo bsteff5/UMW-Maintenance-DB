@@ -36,17 +36,6 @@ CREATE TABLE IF NOT EXISTS `reports` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
---
--- Dumping data for table `reports`
---
-
-INSERT INTO `reports` (`id`, `Description`, `ReportDate`, `Priority`, `BuildingID`) VALUES
-(1, 'SHIT IN HALLWAY', '2013-03-22', 0, 0),
-(2, 'ASSHOLE HERE', '2013-03-02', 0, 0),
-(3, 'ASSHOLE HERE', '2013-03-02', 0, 0),
-(4, 'HELP ME!!!', '2013-03-22', 0, 0),
-(5, 'SERIAL KILLER', '2013-04-05', 0, 0);
-
 -- --------------------------------------------------------
 
 --
