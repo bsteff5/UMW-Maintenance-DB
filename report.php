@@ -65,11 +65,10 @@
                                        
 
 
-					<form method="post" action="submitReport.php"> 
+					<form id="report" method="post" action="submitReport.php"> 
 
 					<table>
 					<tr><td>Building</td><td><input type="text" id="Building" name="Building" /></td></tr>
-					<tr><td>Floor</td><td><input type="text" id="Floor" name="Floor" /></td></tr>
 					<tr><td>Room</td><td><input type="text" id="Room" name="Room" /></td></tr>
 					<tr><td>Report Date</td><td><input type="number" name="month" min="1" max="12" step="1" value="1" size="3"/>
 					<input type="number" name="day" min="1" max="31" step="1" value="1" size="3"/>
@@ -78,7 +77,7 @@
 					
 										
 					
-					<tr><td>Description</td><td><input type="text" id="Description" name="Description" /></td></tr>
+					<tr><td>Description</td><td><input type="text" rows="5" columns="20" id="Description" name="Description" /></td></tr>
 					
 					<tr><td>&nbsp;</td><td><input type="submit" name="Report" value="Report" /></td></tr>
 					</table>

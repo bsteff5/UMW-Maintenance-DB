@@ -80,7 +80,7 @@
 										<h2>Report Lists</h2>
 										<ul class="style4">
 											<li class="first"><a href="currentReports.php">Current Reports</a></li>
-											<li class="first"><a href="resolved.php">Resovled Reports</a></li>
+											<li class="first"><a href="resolved.php">Resolved Reports</a></li>
 											<li class="first"><a href="unresolved.php">Unresolved Reports</a></li>
 										</ul>
 									</section>

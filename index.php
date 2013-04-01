@@ -5,7 +5,22 @@
 	Released for free under the Creative Commons Attribution 3.0 license (html5templates.com/license)
 	Visit http://html5templates.com for more great templates or follow us on Twitter @HTML5T
 -->
+<?php
+	session_start(); 
+	// Start our session if it hasn't been
+	
+	if(!isset($_SESSION['loggedIn'])){
+		
+		$_SESSION['loggedIn'] = 0;
+		$_SESSION['accessLevel'] = 0;
+		$_SESSION['username'] = 'Anonymous';
+		
+	} else {
+	
+			
+	}
 
+?>
 
 <html>
 	<head>
@@ -49,7 +64,7 @@
 					<div class="12u">
 						<section>
 							<h2>UMW Maintenance DB</h2>
-							<p>Is that sink leaking again? Report your problems here man!!<br/><?php echo "AL: " . $_SESSION['accessLevel'] . "\n" . "LI: " . $_SESSION['loggedIn']; ?></p>
+							<p>Hello, <?php echo $_SESSION['username']; ?>. <br/> Is that sink leaking again? Report your problems here man!!<br/></p>
 							<a href="report.php" class="button button-style1">Read More</a>
 						</section>
 					</div>
@@ -88,7 +103,7 @@
 								<h2>Are You UMW Maintenance?</h2>
 								<img src="css/images/featured-icon03.png" width="91" height="68" alt="">
 								<p>If you are, you should login here and start fixing some stuff! Don't wait too long to start fixing stuff!</p>
-								<a href="login.php" class="button button-style1">Read More</a>
+								<a href="admin.php" class="button button-style1">Read More</a>
 							</section>
 						</div>
 					
