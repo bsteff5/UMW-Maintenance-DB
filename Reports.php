@@ -77,57 +77,11 @@
 							<div class="row">
 								<div class="6u">
 									<section>
-										<h2>Date Reported</h2>
+										<h2>Report Lists</h2>
 										<ul class="style4">
-											<li class="first"><a href="#">Date 1</a></li>
-											<li><a href="#">Date 2</a></li>
-											<li><a href="#">Date 3</a></li>
-											<li><a href="#">Date 4</a></li>
-											<li><a href="#">Date 5</a></li>
-											<li><a href="#">Date 6</a></li>
-											<li><a href="#">Date 7</a></li>
-											<li><a href="currentReports.php">View All Current Reports</a></li>
-
-										</ul>
-									</section>
-								</div>
-								<div class="6u">
-									<section>
-										<h2>Building</h2>
-										<ul class="style4">
-											<li class="first"><a href="#">Building 1</a></li>
-											<li><a href="#">Building 2</a></li>
-											<li><a href="#">Building 3</a></li>
-											<li><a href="#">Building 4</a></li>
-											<li><a href="#">Building 5</a></li>
-											<li><a href="#">Building 6</a></li>
-											<li><a href="#">Building 7</a></li>
-											<li><a href=""></a></li>
-
-										</ul>
-									</section>
-								</div>
-								<div class="6u">
-									<section>
-										<h2>Status</h2>
-										<ul class="style4">
-											<li class="first"><a href="#">Status 1</a></li>
-											<li><a href="#">Status 2</a></li>
-											<li><a href="#">Status 3</a></li>
-											<li><a href="#">Status 4</a></li>
-											<li><a href="#">Status 5</a></li>
-											<li><a href="#">Status 6</a></li>
-											<li><a href="#">Status 7</a></li>
-											<li><a href=""></a></li>
-										</ul>
-									</section>
-								</div>
-								<div class="6u">
-									<section>
-										<h2>Other</h2>
-										<ul class="style4">
-											<li class="first"><a href="resolved.php">Resovled List</a></li>
-											<li><a href="unresolved.php">Unresolved List</a></li>
+											<li class="first"><a href="currentReports.php">Current Reports</a></li>
+											<li class="first"><a href="resolved.php">Resovled Reports</a></li>
+											<li class="first"><a href="unresolved.php">Unresolved Reports</a></li>
 										</ul>
 									</section>
 								</div>
