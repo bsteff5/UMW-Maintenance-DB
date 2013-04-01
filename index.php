@@ -49,7 +49,7 @@
 					<div class="12u">
 						<section>
 							<h2>UMW Maintenance DB</h2>
-							<p>Is that sink leaking again? Report your problems here man!!</p>
+							<p>Is that sink leaking again? Report your problems here man!!<br/><?php echo "AL: " . $_SESSION['accessLevel'] . "\n" . "LI: " . $_SESSION['loggedIn']; ?></p>
 							<a href="report.php" class="button button-style1">Read More</a>
 						</section>
 					</div>

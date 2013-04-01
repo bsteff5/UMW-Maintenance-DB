@@ -21,7 +21,7 @@
 
 <html>
 	<head>
-		<title>MegaCorp by HTML5Templates.com</title>
+		<title>UMW Maintenance DB - Administration Menu</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -47,7 +47,7 @@
 					<div class="row">
 
 						<div class="4u" id="logo">
-							<h1><a href="#" class="mobileUI-site-name">UMW Maintenance</a></h1>
+							<h1><a href="index.php" class="mobileUI-site-name">UMW Maintenance</a></h1>
 						</div>
 						<div class="8u" id="menu">
 							<?php include "includes/nav-bar.php"; ?>
@@ -81,28 +81,15 @@
 										<ul class="style4">
 											<li class="first"><a href="buildingsummary.php">Building Summary</a></li>
 											<li><a href="Reports.php">View List of Reports</a></li>
-											<li><a href="#">Donec metus sapien</a></li>
-											<li><a href="#">Integer quis urna</a></li>
-											<li><a href="#">Etiam rhoncus erat</a></li>
-											<li><a href="#">Donec metus sapien</a></li>
+											<li><a href="report.php">Submit a Report</a></li>
+											<li><a href="changePriority.php">Change Priority</a></li>
+											<li><a href="resolved.php">Mark Report as Resolved</a></li>
+											<li><a href="index.php">Goto Homepage</a></li>
 											<li><a href="logout.php">Logout</a></li>
 										</ul>
 									</section>
 								</div>
-								<div class="6u">
-									<section>
-										<h2>Admin Actions</h2>
-										<ul class="style4">
-											<li class="first"><a href="#">Luctus sapien</a></li>
-											<li><a href="#">Etiam rhoncus </a></li>
-											<li><a href="#">Donec dictum metus </a></li>
-											<li><a href="#">Integer gravida </a></li>
-											<li><a href="#">Donec dictum </a></li>
-											<li><a href="#">Integer quis urna</a></li>
-											<li><a href="#">Etiam rhoncus erat</a></li>
-										</ul>
-									</section>
-								</div>
+								
 							</div>
 						</div>
 						<!-- Two Column Content Area Ends Here -->
@@ -111,22 +98,7 @@
 	
 					<!-- Sidebar Section 2 -->
 					<section id="box2">
-						<h2>Ipsum Consequat</h2>
-						<ul class="style2">
-							<li class="first">
-								<p><a href="#"><img src="images/pics07.jpg" alt="">Pellentesque viverra vulputate enim. Aliquam erat volutpat. Donec leo, vivamus fermentum nibh in augue praesent congue rutrum. </a></p>
-							</li>
-							<li>
-								<p><a href="#"><img src="images/pics08.jpg" alt="">Aliquam lacinia metus ut elit. Suspendisse iaculis mauris nec lorem. Donec leo, vivamus fermentum augue praesent congue rutrum.</a></p>
-							</li>
-							<li>
-								<p><a href="#"><img src="images/pics09.jpg" alt="">Suspendisse sit amet tellus in eros bibendum condimentum. Donec leo, vivamus fermentum nibh in augue praesent a lacus congue rutrum. </a></p>
-							</li>
-							<li>
-								<p><a href="#"><img src="images/pics10.jpg" alt="">Aliquam lacinia metus ut elit. Suspendisse iaculis mauris nec lorem. Donec leo, vivamus fermentum augue praesent congue rutrum.</a></p>
-							</li>
-						</ul>
-						<a href="#" class="button button-style1">Read More</a>
+						
 					</section>
 
 
