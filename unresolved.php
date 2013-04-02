@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+<?php session_start(); ?>
 
 <!--
 	MegaCorp: A responsive HTML5 website template by HTML5Templates.com
@@ -82,7 +83,9 @@ reportList.td {
 
 		
 		<div align="center">
+
 			<?php
+			
 					include('dbconnect.php');
 					$query = "SELECT r.ReportDate, r.Description,b.buildingName, rms.room FROM reports r JOIN rooms rms JOIN room_problems rp JOIN buildings b WHERE rp.report_id = r.id AND rp.room = rms.room AND rms.BuildingID = b.buildingId; ";							
 										
@@ -97,10 +100,32 @@ reportList.td {
 						
 					}	
 					
-					echo "</table>"
+					echo "</table>";
+					
+if($_SESSION['loggedIn']==1){
+                                      echo"<form method=\"post\" action=\"markResolved.php\">" ;
+
+					echo"<table>";
+					
+					echo"<tr><td>Problem ID</td><td><input type=\"number\" id=\"id\" name=\"id\" /></td></tr>";
+				
+					
+					
+					echo"<tr><td>Resolved Date</td><td><input type=\"number\" name=\"month\" min=\"1\" max=\"12\" step=\"1\" value=\"1\" size=\"3\"/>
+					<input type=\"number\" name=\"day\" min=\"1\" max=\"31\" step=\"1\" value=\"1\" size=\"3\"/>
+					<input type=\"number\" name=\"year\" min=\"2013\" max=\"2020\" step=\"1\" value=\"2013\" size=\"4\"/></td></tr>";
+					
+echo"<tr><td>&nbsp;</td><td><input type=\"submit\" name=\"Mark Resolved!\" value=\"Mark Resolved\" /></td></tr>";
+					echo"</table>";
+					
+					echo"</form>"; 
+					 
+					}
 
 					
 			?>
+	
+
 			</div>
 
 
