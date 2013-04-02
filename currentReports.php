@@ -79,14 +79,14 @@ reportList.td {
 		<div align="center">
 			<?php
 					include('dbconnect.php');
-					$query = "SELECT * FROM reports ORDER BY ReportDate DESC";					
+					$query = "SELECT rp.ReportDate, rs.ResolveDate, ro.room, rp.Description FROM reports rp JOIN rooms rm JOIN resolved rs WHERE rp.BuildingID = rs.BuildingID AND rs.BuildingID = ro.BuildingID ORDER BY rp.ReportDate DESC";					
 					$result = mysqli_query($db, $query) or die("Error Querying Database");
 					
 					echo "<table class='reportList' width='100%' align='center' padding='10'>";
                                         if(!isset($_SESSION['loggedIn'])){
                                          echo "<tr><th><h2>ID:</h2></th><th><h2>Date Reported:</h2></th><th><h2>Priority:</h2></th><th><h2>Date Resolved:</h2></th><th><h2>Building:</h2></th><th><h2>Room:</h2></th><th><h2>Description:</h2></th></tr>";}
                                             else{
-					           echo "<tr><th><h2>Date Reported:</h2></th><th><h2>Date Resolved:</h2></th><th><h2>Building:</h2></th><th><h2>Floor:</h2></th><th><h2>Room:</h2></th><th><h2>Description:</h2></th></tr>";
+					           echo "<tr><th><h2>Date Reported:</h2></th><th><h2>Date Resolved:</h2></th><th><h2>Room:</h2></th><th><h2>Description:</h2></th></tr>";
 					         }
 					while($row = mysqli_fetch_array($result)) {
 					 	if(!isset($_SESSION['loggedIn'])){
@@ -94,7 +94,7 @@ reportList.td {
                                                
  					}
                                                  else{
-						echo "<tr><td align='center'>" . $row['ReportDate'] . "</td><td align='center'>" . $row['ResolveDate'] . "</td><td align='center'>" .$row['Building'] . "</td><td align='center'>" . $row['Floor'] . "</td><td align='center'>" . $row['Room'] . "</td><td align='center'>" . $row['Description'] . "</td></tr>";
+						echo "<tr><td align='center'>" . $row['ReportDate'] . "</td><td align='center'>" . $row['ResolveDate'] . "</td><td align='center'>" . $row['Room'] . "</td><td align='center'>" . $row['Description'] . "</td></tr>";
 						}
 						
 					}	
