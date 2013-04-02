@@ -84,7 +84,7 @@ reportList.td {
 		<div align="center">
 			<?php
 					include('dbconnect.php');
-					$query = "SELECT rp.ReportDate, b.buildingName, ro.room, rp.Description FROM reports rp JOIN rooms ro JOIN resolved rs WHERE rp.report_id = rp.id AND rp.room = rm.room AND rm.BuildingID = b.buildingId AND rs.ResolveDate IS NOT NULL;";					
+					$query = "SELECT r.ReportDate, rs.ResolveDate, b.buildingName, rms.room, r.Description FROM reports r JOIN rooms rms JOIN room_problems rp JOIN buildings b JOIN resolved rs WHERE rp.report_id = r.id AND rp.room = rms.room AND rms.BuildingID = b.buildingId AND rs.ResolveDate IS NOT NULL;";					
 					$result = mysqli_query($db, $query) or die("Error Querying Database");
 					
 					echo "<table class='reportList' width='100%' align='center' padding='10'>";
