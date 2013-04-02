@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+<?php session_start(); ?>
 
 <!--
 	MegaCorp: A responsive HTML5 website template by HTML5Templates.com

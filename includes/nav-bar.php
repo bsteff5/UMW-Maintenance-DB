@@ -1,5 +1,6 @@
 <?php 
 
+//session_start();
 						
 						if(!isset($_SESSION['loggedIn'])){
 							
@@ -18,7 +19,7 @@
 							echo '		<li><a href="Reports.php">Problem Reports</a></li>';
 							echo '		<li><a href="report.php">Submit a Report</a></li>';
 							
-							if ($_SESSION['loggedIn'] == 1 && $_SESSION['accessLevel'] > 0) {
+							if ($_SESSION['loggedIn'] == 1) {
 								
 								echo '<li><a href="admin.php">Admin Menu</a></li>';								
 								

@@ -2,7 +2,7 @@
 
 	session_start();	
 	
-	if( ($_SESSION['loggedIn'] == 0 || isset($_SESSION['loggedIn']) == False ) || $_SESSION['accessLevel'] < 1) {
+	if( ($_SESSION['loggedIn'] == 0)) {
 
 		header("Location: index.php");	
 		

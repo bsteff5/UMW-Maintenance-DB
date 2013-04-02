@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+<?php session_start(); ?>
 
 <!--
 	MegaCorp: A responsive HTML5 website template by HTML5Templates.com
@@ -81,7 +82,7 @@ reportList.td {
 
 //echo $_SESSION['loggedIn'];
 					include('dbconnect.php');
-					$query = "SELECT r.ReportDate, r.Description,b.buildingName, rms.room FROM reports r JOIN rooms rms JOIN room_problems rp JOIN buildings b JOIN resolved rs WHERE rp.report_id = r.id AND rp.room = rms.room AND rms.BuildingID = b.buildingId ORDER BY r.ReportDate DESC";					
+					$query = "SELECT r.ReportDate,r.Priority,r.id,r.Description, r.Description,b.buildingName, rms.room FROM reports r JOIN rooms rms JOIN room_problems rp JOIN buildings b WHERE rp.report_id = r.id AND rp.room = rms.room AND rms.BuildingID = b.buildingId; ";					
 					$result = mysqli_query($db, $query) or die("Error Querying Database");
 					
 					echo "<table class='reportList' width='100%' align='center' padding='10'>";
@@ -93,26 +94,26 @@ reportList.td {
 					           echo "<tr><th><h2>Date Reported:</h2></th><th><h2>Room:</h2></th><th><h2>Description:</h2></th></tr>";
 					         }
 					if($_SESSION['loggedIn']==1){
-echo"gets to here...";
+//echo"gets to here...";
+					
 
 
 					while($row = mysqli_fetch_array($result)) {
-echo"what the fuck";
+//echo"what the fuck";
 
 
-                                                 echo "<tr><td align='center'>" . $row['ReportDate'] . "</td><td align='center'>" .$row['buildingName'] .  "</td><td align='center'>" . $row['room'] . "</td><td align='center'>" . $row['Description'] . "</td></tr>";
+                                                 echo "<tr><td align='center'>" . $row['ReportDate'] . "</td><td align='center'>" .$row['id'] .  "</td><td align='center'>" . $row['Priority'] . "</td><td align='center'>" . $row['buildingName'] . "</td><td align='center'>" . $row['room'] .  "</td><td align='center'>" . $row['Description'] ."</td></tr>";
 
                                                
- 					}}
-                                                 else{
+ 					}} else{
 						while($row = mysqli_fetch_array($result)) {
-echo"what the fuck 2";
-						echo "<tr><td align='center'>" . $row['ReportDate'] . "</td><td align='center'>" . $row['Room'] . "</td><td align='center'>" . $row['Description'] . "</td></tr>";
+//echo"what the fuck 2";
+						echo "<tr><td align='center'>" . $row['ReportDate'] . "</td><td align='center'>" . $row['room'] . "</td><td align='center'>" . $row['Description'] . "</td></tr>";
 						}
 						
 					}	
 
-echo"...skips to here?";
+//echo"...skips to here?";
 					echo "</table>"
 
 
@@ -125,23 +126,24 @@ echo"...skips to here?";
 			</section>
                                         
 
+<?php
+  if($_SESSION['loggedIn']==1){
+                                      echo"<form method=\"post\" action=\"changePriority.php\">" ;
 
-                                      <form method="post" action="changePriority.php"> 
-
-					<table>
+					echo"<table>";
 					
-					<tr><td>Problem ID</td><td><input type="number" id="id" name="id" /></td></tr>
+					echo"<tr><td>Problem ID</td><td><input type=\"number\" id=\"id\" name=\"id\" /></td></tr>";
 					
-					<tr><td>Set Priority To:</td><td><input type="number" id="Priority" name="Priority" /></td></tr>
+					echo"<tr><td>Set Priority To:</td><td><input type=\"number\" id=\"Priority\" name=\"Priority\" /></td></tr>";
 					
 					
-					<tr><td>&nbsp;</td><td><input type="submit" name="changePriority" value="Change Priority" /></td></tr>
-					</table>
+					echo"<tr><td>&nbsp;</td><td><input type=\"submit\" name=\"changePriority\" value=\"Change Priority\" /></td></tr>";
+					echo"</table>";
 					
-					</form> 
+					echo"</form>"; 
 					 
-					
-			
+					}
+		?>	
 				
 				</div>
 			</div>

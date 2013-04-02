@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+<?php session_start(); ?>
 
 <!--
 	MegaCorp: A responsive HTML5 website template by HTML5Templates.com
@@ -59,7 +60,7 @@
 					
 					<!-- Main Content Area -->
 					<section>
-						<h2 class="main-title">Maintenance Reports</h2>
+						<h2 class="main-title">Maintenance Reports </h2>
 						<a href="#" class="image-style1"><img src="images/Trinkle.jpg" alt=""></a>
 						
 					</section>
