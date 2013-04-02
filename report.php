@@ -68,7 +68,30 @@
 					<form id="report" method="post" action="submitReport.php"> 
 
 					<table>
-					<tr><td>Building</td><td><input type="text" id="Building" name="Building" /></td></tr>
+					<tr><td>Building</td><td>
+						<select id="building" name="building">
+							<?php
+									include "dbconnect.php";
+									
+									$query = "SELECT buildingId, buildingName FROM buildings";
+									
+									$result = mysqli_query($db, $query) or die("Can't connect to database!!!");
+									
+									while($row = mysqli_fetch_array($result)) {
+										
+										echo "<option value='" . $row['buildingId'] . "'> " . $row['buildingName'] . "</option>\n";	
+										
+									}							
+							
+							?>					
+							
+						
+						
+						</select>					
+					
+					
+					
+					</td></tr>
 					<tr><td>Room</td><td><input type="text" id="Room" name="Room" /></td></tr>
 					<tr><td>Report Date</td><td><input type="number" name="month" min="1" max="12" step="1" value="1" size="3"/>
 					<input type="number" name="day" min="1" max="31" step="1" value="1" size="3"/>

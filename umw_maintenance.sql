@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 28, 2013 at 05:21 PM
+-- Generation Time: Apr 01, 2013 at 08:13 PM
 -- Server version: 5.1.63
 -- PHP Version: 5.3.5-1ubuntu7.11
 
@@ -24,6 +24,80 @@ USE `umw_maintenance`;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `buildings`
+--
+
+CREATE TABLE IF NOT EXISTS `buildings` (
+  `buildingId` int(2) NOT NULL,
+  `buildingName` varchar(80) NOT NULL,
+  PRIMARY KEY (`buildingId`),
+  KEY `buildingName` (`buildingName`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `buildings`
+--
+
+INSERT INTO `buildings` (`buildingId`, `buildingName`) VALUES
+(0, '1004 College Avenue'),
+(1, '1201 William Street'),
+(2, 'Alvey Hall'),
+(3, 'Alvey House'),
+(4, 'Anderson Center'),
+(5, 'Amnex A'),
+(6, 'Amnex B'),
+(7, 'Arlington Hall'),
+(8, 'Art Gallery'),
+(9, 'Ball Hall'),
+(10, 'Battleground Athletic Complex'),
+(11, 'Bell Tower'),
+(12, 'Brent House'),
+(13, 'Brompton'),
+(14, 'Bushnell Hall'),
+(15, 'Chandler Hall'),
+(16, 'Combs Hall'),
+(17, 'Cornell House'),
+(18, 'Custis Hall'),
+(19, 'duPont Hall'),
+(20, 'Eagle Landing'),
+(21, 'Fairfax House'),
+(22, 'Fitness Center'),
+(23, 'Framar House'),
+(24, 'George Washington Hall'),
+(25, 'Goolrick Hall'),
+(26, 'Hamlet House'),
+(27, 'Heating Plant'),
+(28, 'Jefferson Hall'),
+(29, 'Jepson Alumni Executive Center'),
+(30, 'Jepson Science Center'),
+(31, 'Lee Hall'),
+(32, 'Simpson Library'),
+(33, 'Madison Hall'),
+(34, 'Marshall Hall'),
+(35, 'Marye House'),
+(36, 'Mason Hall'),
+(37, 'Melchers Hall'),
+(38, 'Mercer Hall'),
+(39, 'Monroe Hall'),
+(40, 'Parking Deck'),
+(41, 'Physical Plant'),
+(42, 'Pollard Hall'),
+(43, 'Randolph Hall'),
+(44, 'Russell Hall'),
+(45, 'Seacobeck Hall'),
+(46, 'South Hall'),
+(47, 'Tennis Center'),
+(48, 'Trinkle Hall'),
+(49, 'Tyler House'),
+(50, 'University Apartments'),
+(51, 'Virginia Hall'),
+(52, 'Westmoreland Hall'),
+(53, 'Willard Hall'),
+(54, 'Woodard Campus Center');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `reports`
 --
 
@@ -34,7 +108,12 @@ CREATE TABLE IF NOT EXISTS `reports` (
   `Priority` int(11) DEFAULT '0',
   `BuildingID` int(3) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+
+--
+-- Dumping data for table `reports`
+--
+
 
 -- --------------------------------------------------------
 
@@ -66,17 +145,12 @@ CREATE TABLE IF NOT EXISTS `room_problems` (
   `report_id` int(3) NOT NULL AUTO_INCREMENT,
   `room` int(3) NOT NULL,
   PRIMARY KEY (`report_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `room_problems`
 --
 
-INSERT INTO `room_problems` (`report_id`, `room`) VALUES
-(1, 112),
-(2, 33),
-(3, 777),
-(4, 777);
 
 -- --------------------------------------------------------
 
@@ -94,10 +168,6 @@ CREATE TABLE IF NOT EXISTS `rooms` (
 -- Dumping data for table `rooms`
 --
 
-INSERT INTO `rooms` (`room`, `BuildingID`) VALUES
-(33, 0),
-(112, 0),
-(777, 0);
 
 -- --------------------------------------------------------
 

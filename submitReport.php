@@ -2,13 +2,12 @@
 include('dbconnect.php');
 	
 
-$Building = $_POST['Building'];
-$Floor= $_POST['Floor'];
+$Building = $_POST['building'];
 $Room= $_POST['Room'];
 $ReportDate=$_POST['year']."-".$_POST['month']."-".$_POST['day'];
 $Description=$_POST['Description'];
 				
-				$qi = "INSERT INTO reports (Description, ReportDate, Priority, BuildingID) VALUES ('$Description', '$ReportDate', 0, 0);";
+				$qi = "INSERT INTO reports (Description, ReportDate, Priority, BuildingID) VALUES ('$Description', '$ReportDate', 0, '$Building');";
 				echo "$qi\n";
 				$q = mysqli_query($db, $qi) or die(mysqli_error($db)); 
 	
@@ -21,7 +20,7 @@ $Description=$_POST['Description'];
 				if( $exists > 0) {
 				
 				} else {
-					$q = mysqli_query($db, "INSERT INTO rooms (room) VALUES ('$Room');") or die("1");
+					$q = mysqli_query($db, "INSERT INTO rooms (room, BuildingID) VALUES ('$Room', '$Building');") or die("1");
 				}
 
 

@@ -86,7 +86,7 @@ reportList.td {
 					include('dbconnect.php');
 					//$query = "SELECT r.ReportDate, r.Description, r.BuildingID, rms.room FROM reports r JOIN rooms rms WHERE r.BuildingID = rms.BuildingID ; ";
 					
-					$query = "SELECT r.ReportDate, r.Description, r.BuildingID, rms.room FROM reports r JOIN rooms rms JOIN room_problems rp WHERE rp.report_id = r.id AND rp.room = rms.room ; ";							
+					$query = "SELECT r.ReportDate, r.Description,b.buildingName, rms.room FROM reports r JOIN rooms rms JOIN room_problems rp JOIN buildings b WHERE rp.report_id = r.id AND rp.room = rms.room AND rms.BuildingID = b.buildingId ; ";							
 										
 					$result = mysqli_query($db, $query) or die("Error Querying Database");
 					
@@ -94,7 +94,7 @@ reportList.td {
 					echo "<tr><th><h2>Date Reported:</h2></th><th><h2>Building:</h2></th><th><h2>Room:</h2></th><th><h2>Description:</h2></th></tr>";
 					 while($row = mysqli_fetch_array($result)) {
 					 	
-						echo "<tr><td align='center'>" . $row['ReportDate'] . "</td><td align='center'>" .$row['BuildingID'] .  "</td><td align='center'>" . $row['room'] . "</td><td align='center'>" . $row['Description'] . "</td></tr>";
+						echo "<tr><td align='center'>" . $row['ReportDate'] . "</td><td align='center'>" .$row['buildingName'] .  "</td><td align='center'>" . $row['room'] . "</td><td align='center'>" . $row['Description'] . "</td></tr>";
 						
 						
 					}	
