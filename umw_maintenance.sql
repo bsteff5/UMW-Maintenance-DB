@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `reports` (
   `Priority` int(11) DEFAULT '0',
   `BuildingID` int(3) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
 
 --
 -- Dumping data for table `reports`
@@ -145,7 +145,7 @@ CREATE TABLE IF NOT EXISTS `room_problems` (
   `report_id` int(3) NOT NULL AUTO_INCREMENT,
   `room` int(3) NOT NULL,
   PRIMARY KEY (`report_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
 
 --
 -- Dumping data for table `room_problems`
