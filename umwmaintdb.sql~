@@ -1,0 +1,10 @@
+CREATE TABLE reports {
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    Description LONGTEXT NOT NULL,
+    ReportDate DATE NOT NULL,
+    Priority INT DEFAULT '0',
+    ResolveDate DATE,
+    Building VARCHAR(50) NOT NULL,
+    Floor VARCHAR(40),
+    Room VARCHAR(40)
+};

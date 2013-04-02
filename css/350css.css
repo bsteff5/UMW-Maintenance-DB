@@ -1,0 +1,14 @@
+reportList.table { 
+
+  width:100%;
+  align: center;
+  border-spacing:4;
+  border: 2;
+  border-collapse:collapse;
+  padding: 8;
+}
+
+reportList.table.td{
+	padding: 5px;
+	align: center;
+}
