@@ -79,7 +79,6 @@
 									<section>
 										<h2>Admin Actions</h2>
 										<ul class="style4">
-											<li class="first"><a href="buildingsummary.php">Building Summary</a></li>
 											<li><a href="Reports.php">View List of Reports</a></li>
 											<li><a href="report.php">Submit a Report</a></li>
 											<li><a href="changePriority.php">Change Priority</a></li>
