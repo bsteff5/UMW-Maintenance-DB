@@ -82,7 +82,7 @@
 											<li><a href="Reports.php">View List of Reports</a></li>
 											<li><a href="report.php">Submit a Report</a></li>
 											<li><a href="changePriority.php">Change Priority</a></li>
-											<li><a href="resolved.php">Mark Report as Resolved</a></li>
+											<li><a href="unresolved.php">Mark Report as Resolved</a></li>
 											<li><a href="index.php">Goto Homepage</a></li>
 											<li><a href="logout.php">Logout</a></li>
 										</ul>
