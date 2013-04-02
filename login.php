@@ -1,5 +1,26 @@
 <?php
 	session_start(); // Start our session if it hasn't been
+	include "dbconnect.php";
+	$failed = 0;
+	if (isset($_POST['username'])) {
+		$algo = 'sha256';
+		$username = $_POST['username'];
+		$password = hash($algo , $_POST['password']);
+		// Build the query string we'll use
+		$query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+		// Query the DB and store the result in $result
+		$result = mysqli_query($db, $query)
+			or die("Error Querying Database");
+		if ($row = mysqli_fetch_array($result)) {
+			$_SESSION['loggedIn'] = 1;
+			$_SESSION['username'] = $username;
+			$_SESSION['accessLevel'] = 0;
+		} else {
+			$failed = 1;
+		}
+	}
+
+/*
 	
 	if(!isset($_SESSION['loggedIn'])){
 		
@@ -13,7 +34,8 @@
 			
 	}
 
-	
+ */
+/*	
 	// Check to see if the user has attempted a login or if  it's there first time visiting this page
 	if( $_SESSION['loggedIn'] == 0 || ($_POST['username'] != "" || $_POST['password'] != "")){
 	
@@ -74,7 +96,7 @@
 		// If this is their first time visiting the page, then we should just exit php mode
 		
 	}
-	
+ */	
 ?>
 
 
