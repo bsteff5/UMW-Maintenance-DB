@@ -123,9 +123,6 @@ CREATE TABLE IF NOT EXISTS `reports` (
 
 CREATE TABLE IF NOT EXISTS `resolved` (
   `id` bigint(20) NOT NULL,
-  `Description` longtext NOT NULL,
-  `Priority` int(11) NOT NULL,
-  `BuildingID` int(3) NOT NULL,
   `ResolveDate` date NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -142,8 +139,8 @@ CREATE TABLE IF NOT EXISTS `resolved` (
 --
 
 CREATE TABLE IF NOT EXISTS `room_problems` (
-  `report_id` int(3) NOT NULL AUTO_INCREMENT,
-  `room` int(3) NOT NULL,
+  `report_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `room` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`report_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=0 ;
 
@@ -159,7 +156,7 @@ CREATE TABLE IF NOT EXISTS `room_problems` (
 --
 
 CREATE TABLE IF NOT EXISTS `rooms` (
-  `room` int(3) NOT NULL,
+  `room` VARCHAR(20) NOT NULL,
   `BuildingID` int(3) NOT NULL,
   PRIMARY KEY (`room`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
