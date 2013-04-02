@@ -2,10 +2,11 @@
 include('dbconnect.php');
 	
 
-$Building = $_POST['building'];
-$Room= $_POST['Room'];
+$Building =mysqli_real_escape_string($db, trim($_POST['building']));
+$Room=mysqli_real_escape_string($db, trim($_POST['Room']));
 $ReportDate=$_POST['year']."-".$_POST['month']."-".$_POST['day'];
-$Description=$_POST['Description'];
+$Description=mysqli_real_escape_string($db, trim($_POST['Description']));
+
 				
 				$qi = "INSERT INTO reports (Description, ReportDate, Priority, BuildingID) VALUES ('$Description', '$ReportDate', 0, '$Building');";
 				echo "$qi\n";

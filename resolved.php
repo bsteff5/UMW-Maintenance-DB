@@ -5,7 +5,9 @@
 	Released for free under the Creative Commons Attribution 3.0 license (html5templates.com/license)
 	Visit http://html5templates.com for more great templates or follow us on Twitter @HTML5T
 -->
-
+<?php
+	session_start();
+?>
 
 <html>
 	<head>
@@ -84,14 +86,27 @@ reportList.td {
 		<div align="center">
 			<?php
 					include('dbconnect.php');
-					$query = "SELECT r.ReportDate, rs.ResolveDate, b.buildingName, rms.room, r.Description FROM reports r JOIN rooms rms JOIN room_problems rp JOIN buildings b JOIN resolved rs WHERE rp.report_id = r.id AND rp.room = rms.room AND rms.BuildingID = b.buildingId AND rs.ResolveDate IS NOT NULL;";					
+					$query = "CREATE TEMPORARY TABLE IF NOT EXISTS rslvd (" .
+						"SELECT rp.id, rp.Description, rp.ReportDate, " .
+						"rp.Priority, rp.BuildingID, rs.ResolveDate " .
+						"FROM resolved rs LEFT OUTER JOIN reports rp " .
+						"ON rs.id = rp.id " .
+						");";
+					mysqli_query($db, $query) or die ("Error creating temp");
+					$query = "SELECT r.ReportDate, r.Description, " .
+						"b.buildingName, rms.room, r.ResolveDate " .
+						"FROM rslvd r JOIN rooms rms JOIN room_problems rp " .
+						"JOIN buildings b WHERE rp.report_id = r.id AND " .
+						"rp.room = rms.room AND rms.BuildingID = b.buildingID;";
 					$result = mysqli_query($db, $query) or die("Error Querying Database");
+//					$query = "DROP TABLE IF EXISTS rslvd;";
+//					mysqli_query($db, $query) or die ("Error dropping temp");
 					
 					echo "<table class='reportList' width='100%' align='center' padding='10'>";
 					echo "<tr><th><h2>Date Reported:</h2></th><th><h2>Date Resolved:</h2></th><th><h2>Building:</h2></th><th><h2>Room:</h2></th><th><h2>Description:</h2></th></tr>";
 					 while($row = mysqli_fetch_array($result)) {
 					 	
-						echo "<tr><td align='center'>" . $row['ReportDate'] . "</td><td align='center'>" . $row['ResolveDate'] . "</td><td align='center'>" .$row['Building'] . "</td><td align='center'>" . $row['Floor'] . "</td><td align='center'>" . $row['Room'] . "</td><td align='center'>" . $row['Description'] . "</td></tr>";
+						echo "<tr><td align='center'>" . $row['ReportDate'] . "</td><td align='center'>" . $row['ResolveDate'] . "</td><td align='center'>" .$row['buildingName'] . "</td><td align='center'>" . $row['room'] . "</td><td align='center'>" . $row['Description'] . "</td></tr>";
 						
 						
 					}	
